@@ -2,12 +2,6 @@ from flask import Flask, request, Response
 import os
 import requests
 
-import json
-
-import time
-
-import collections
-
 app = Flask(__name__)
 
 
@@ -22,9 +16,8 @@ def home():
 
 @app.route('/with_argument')
 def with_argument():
-    data=requests.form
-    arg = data.get("arg", "No argument")
-    return arg
+    arg = request.args.get("arg")
+    return arg, 200
 
 
 # Start the server on port 3000

@@ -9,15 +9,14 @@ app = Flask(__name__)
 @app.route('/home')
 def home():
     print("Hello hello hello")
-
-
     return "Hello World"
 
 
 @app.route('/with_argument')
 def with_argument():
     arg = request.args.get("arg")
-    return arg, 200
+    max_results = request.args.get("max_results")
+    return [arg, max_results], 200
 
 
 # Start the server on port 3000

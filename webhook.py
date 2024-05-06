@@ -20,6 +20,10 @@ def home():
     return "Hello World"
 
 
+@app.route('/with_argument')
+def with_argument(payload):
+    arg = payload.get("arg", "No argument")
+    return arg
 
 
 # Start the server on port 3000

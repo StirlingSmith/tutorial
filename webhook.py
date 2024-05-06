@@ -21,8 +21,9 @@ def home():
 
 
 @app.route('/with_argument')
-def with_argument(payload):
-    arg = payload.get("arg", "No argument")
+def with_argument():
+    data=requests.form
+    arg = data.get("arg", "No argument")
     return arg
 
 
